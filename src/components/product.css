@@ -1,0 +1,9 @@
+.product > .img-thumbnail{
+    border:none;
+    height: 260px;
+    width: 100%;
+}
+
+.product > .product-title{
+    text-transform: uppercase;
+}

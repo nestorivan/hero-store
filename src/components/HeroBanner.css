@@ -1,0 +1,5 @@
+.hero-banner{
+    background-image: url('/img/plates-header.jpg');
+    height: 533px;
+    background-size: cover;
+}
