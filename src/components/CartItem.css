@@ -1,0 +1,15 @@
+.cart-item img {
+    max-width: 90px;
+}
+
+.cart-item  .remove {
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    border: none;
+    background: transparent;
+}
+
+.cart-item .remove:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.cart-modal button.btn{
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+.cart-modal .btn.outline{
+    background: transparent;
+    border:1px solid black;
+    color:black;
+}
+
+.cart-modal .btn.solid{
+    background: black;
+    color:white;
+}
