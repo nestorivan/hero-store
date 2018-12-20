@@ -6,13 +6,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ProductsProvider } from './context/ProductsContext';
 import { StoreProvider } from './context/StoreContext';
+import { CartProvider } from './context/CartContext';
 
 ReactDOM.render(
-  <ProductsProvider>
-    <StoreProvider>
-      <App />
-    </StoreProvider>
-  </ProductsProvider>,
+  <CartProvider>
+    <ProductsProvider>
+      <StoreProvider>
+        <App />
+      </StoreProvider>
+    </ProductsProvider>
+  </CartProvider>,
   document.getElementById('root')
 );
 

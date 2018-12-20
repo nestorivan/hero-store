@@ -7,19 +7,24 @@ class CartProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: {},
+      handleAddItem: this.handleAddItem,
+      handleRemoveItem: this.handleRemoveItem
     };
   }
 
   handleAddItem = id => {
-    this.state[id]
-      ? this.setState(state => ({ [id]: state[id] + 1 }))
-      : this.setState({ [id]: 1 });
+    let { items } = this.state;
+    items[id] = items[id] ? items[id] + 1 : 1;
+
+    this.setState({ ...this.state, ...items });
   };
 
   handleRemoveItem = id => {
-    const { item, ...state } = this.state;
-    this.setState({ state });
+    let { items } = this.state;
+    delete items[id] ;
+
+    this.setState({ ...this.state, ...items });
   };
 
   render() {
@@ -27,4 +32,4 @@ class CartProvider extends Component {
   }
 }
 
-export { CartProvider, Consumer as ProductsConsumer, CartContext };
+export { CartProvider, Consumer as CartConsumer, CartContext };
