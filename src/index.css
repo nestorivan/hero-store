@@ -13,7 +13,22 @@ code {
     monospace;
 }
 
-
 :root{
-  --test: teal;
+  --dark: #393A35
+}
+
+button.btn{
+  border-radius: 0px;
+  text-transform: uppercase;
+}
+
+.btn.outline{
+  background: transparent;
+  border:1px solid var(--dark);
+  color:var(--dark);
+}
+
+.btn.solid{
+  background: var(--dark);
+  color:white;
 }
