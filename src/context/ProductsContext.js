@@ -15,13 +15,20 @@ class ProductsProvider extends Component {
   }
 
   componentDidMount() {
+    //check if component is still mounted
+    this.mounted = true;
     this.setState({ loading: true, error: null });
 
     getProducts()
-      .then(products => this.setState({ products, loading: false }))
+      .then(products => {
+        if (this.mounted) this.setState({ products, loading: false });
+      })
       .catch(error => this.setState({ loading: false, error }));
   }
 
+  componentWillUnmount() {
+    this.mounted = false;
+  }
   render() {
     return <Provider value={this.state}>{this.props.children}</Provider>;
   }
